@@ -19,6 +19,14 @@ public class CommandeEntity {
 		cartons = new ArrayList<CartonEntity>();
 	}
 	
+	public int getNumeroCommande() {
+		return numeroCommande;
+	}
+
+	public void setNumeroCommande(int numeroCommande) {
+		this.numeroCommande = numeroCommande;
+	}
+	
 	private double getRemiseQuantite() {
 		return 0.;
 	}
