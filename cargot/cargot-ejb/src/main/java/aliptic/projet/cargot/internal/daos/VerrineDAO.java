@@ -18,7 +18,7 @@ public class VerrineDAO {
 		entityManager.persist(Verrine);
 	}
 
-	public VerrineEntity readOne(int code) {
+	public VerrineEntity readOne(int id) {
 		return entityManager.find(VerrineEntity.class, id);
 	}
 	
