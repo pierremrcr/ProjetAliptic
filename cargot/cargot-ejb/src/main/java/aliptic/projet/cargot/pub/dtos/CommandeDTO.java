@@ -11,8 +11,16 @@ public class CommandeDTO implements Serializable {
 	private List<CartonDTO> cartons;
 	
 	public CommandeDTO(int numeroCommande) {
-		this.numeroCommande = numeroCommande;
+		this.setNumeroCommande(numeroCommande);
 		cartons = new ArrayList<CartonDTO>();
+	}
+
+	public int getNumeroCommande() {
+		return numeroCommande;
+	}
+
+	public void setNumeroCommande(int numeroCommande) {
+		this.numeroCommande = numeroCommande;
 	}
 	
 	private double getRemiseQuantite() {
@@ -44,6 +52,5 @@ public class CommandeDTO implements Serializable {
 		total -= total * (getRemiseQuantite() + getRemiseTransport());
 		return total;
 	}
-
 
 }
