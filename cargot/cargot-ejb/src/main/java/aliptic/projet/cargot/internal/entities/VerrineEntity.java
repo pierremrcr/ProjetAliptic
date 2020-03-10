@@ -4,6 +4,9 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import aliptic.projet.cargot.internal.Calibre;
+import aliptic.projet.cargot.internal.Espece;
+
 @Entity
 public class VerrineEntity {
 	
