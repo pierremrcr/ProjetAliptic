@@ -11,7 +11,7 @@ import aliptic.projet.cargot.internal.entities.GrossisteEntity;
 @Local
 public class GrossisteDAO {
 	
-	@PersistenceContext(unitName="A_MODIFIER")
+	@PersistenceContext(unitName="cargotPersistenceUnit")
 	EntityManager entityManager;
 
 	public void create(GrossisteEntity Grossiste) {

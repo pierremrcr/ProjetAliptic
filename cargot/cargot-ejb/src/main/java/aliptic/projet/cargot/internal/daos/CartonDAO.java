@@ -11,7 +11,7 @@ import aliptic.projet.cargot.internal.entities.CartonEntity;
 @Local
 public class CartonDAO {
 	
-	@PersistenceContext(unitName="A_MODIFIER")
+	@PersistenceContext(unitName="cargotPersistenceUnit")
 	EntityManager entityManager;
 
 	public void create(CartonEntity Carton) {
