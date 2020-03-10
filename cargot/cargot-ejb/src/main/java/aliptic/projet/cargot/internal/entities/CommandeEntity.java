@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import aliptic.projet.cargot.internal.Calibre;
+
 @Entity
 public class CommandeEntity {
 	

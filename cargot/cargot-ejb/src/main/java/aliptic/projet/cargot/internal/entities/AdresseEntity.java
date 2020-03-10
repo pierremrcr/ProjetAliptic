@@ -15,7 +15,6 @@ public class AdresseEntity {
 	private String pays;
 	
 	public AdresseEntity(int id, String numero, String nomRue, String codePostal, String ville, String pays) {
-		super();
 		this.id = id;
 		this.numero = numero;
 		this.nomRue = nomRue;

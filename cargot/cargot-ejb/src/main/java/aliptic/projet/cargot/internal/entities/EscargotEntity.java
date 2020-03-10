@@ -3,6 +3,9 @@ package aliptic.projet.cargot.internal.entities;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import aliptic.projet.cargot.internal.Calibre;
+import aliptic.projet.cargot.internal.Espece;
+
 @Entity
 public class EscargotEntity {
 

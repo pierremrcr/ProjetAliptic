@@ -1,4 +1,4 @@
-package aliptic.projet.cargot.internal.entities;
+package aliptic.projet.cargot.internal;
 
 public enum Calibre {
 	
