@@ -1,6 +1,5 @@
 package aliptic.projet.cargot.internal.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,10 +11,9 @@ public class CartonEntity {
 	private int id;
 	private List<VerrineEntity> verrines;
 	
-	public CartonEntity(int id) {
-		super();
+	public CartonEntity(int id, List<VerrineEntity> verrines) {
 		this.id = id;
-		verrines = new ArrayList<VerrineEntity>();
+		this.verrines = verrines;
 	}
 	
 	public int getId() {
