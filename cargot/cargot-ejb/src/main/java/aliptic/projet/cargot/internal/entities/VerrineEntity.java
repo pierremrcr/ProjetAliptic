@@ -9,19 +9,49 @@ public class VerrineEntity {
 	
 	@Id
 	private int id;
+	private Calibre calibre;
+	private Espece espece;
+	private int quantiteMax;
 	private List<EscargotEntity> escargots;
 	
-	public VerrineEntity(int id, List<EscargotEntity> escargots) {
+	public VerrineEntity(int id, Calibre calibre, Espece espece, int quantiteMax, List<EscargotEntity> escargots) {
 		this.id = id;
-		escargots = this.escargots;
+		this.calibre = calibre;
+		this.espece = espece;
+		this.quantiteMax = quantiteMax;
+		this.escargots = escargots;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
 	
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public Calibre getCalibre() {
+		return calibre;
+	}
+
+	public void setCalibre(Calibre calibre) {
+		this.calibre = calibre;
+	}
+
+	public Espece getEspece() {
+		return espece;
+	}
+
+	public void setEspece(Espece espece) {
+		this.espece = espece;
+	}
+
+	public int getQuantiteMax() {
+		return quantiteMax;
+	}
+
+	public void setQuantiteMax(int quantiteMax) {
+		this.quantiteMax = quantiteMax;
 	}
 	
 	public List<EscargotEntity> getEscargots() {
@@ -33,16 +63,7 @@ public class VerrineEntity {
 	}
 	
 	public double getPoids() {
-		double poidsEscargot = 0.;
-		switch (escargots.get(0).getCalibre()) {
-			case PETIT:
-				poidsEscargot = 5.;
-			case MOYEN:
-				poidsEscargot = 10.;
-			case GRAND:
-				poidsEscargot = 20.;
-		}
-		return escargots.size() * poidsEscargot;
+		return escargots.get(0).getPoids() * escargots.size();
 	}
 
 }

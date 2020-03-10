@@ -4,19 +4,21 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public abstract class EscargotEntity {
+public class EscargotEntity {
 
 	@Id
 	private int id;
 	private boolean isDisponible;
 	private Calibre calibre;
+	private Espece espece;
+	private double poids;
 
-	public abstract String getEspece();
-	
-	public EscargotEntity(int id, boolean isDisponible, Calibre calibre) {
+	public EscargotEntity(int id, boolean isDisponible, Calibre calibre, Espece espece, double poids) {
 		this.id = id;
 		this.isDisponible = isDisponible;
 		this.calibre = calibre;
+		this.espece = espece;
+		this.poids = poids;
 	}
 	
 	public int getId() {
@@ -41,6 +43,22 @@ public abstract class EscargotEntity {
 
 	public void setCalibre(Calibre calibre) {
 		this.calibre = calibre;
+	}
+	
+	public Espece getEspece() {
+		return espece;
+	}
+
+	public void setEspece(Espece espece) {
+		this.espece = espece;
+	}
+
+	public double getPoids() {
+		return poids;
+	}
+
+	public void setPoids(double poids) {
+		this.poids = poids;
 	}
 
 }
