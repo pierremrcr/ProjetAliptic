@@ -11,7 +11,7 @@ import aliptic.projet.cargot.internal.entities.EscargotEntity;
 @Local
 public class EscargotDAO {
 	
-	@PersistenceContext(unitName="A_MODIFIER")
+	@PersistenceContext(unitName="cargotPersistenceUnit")
 	EntityManager entityManager;
 
 	public void create(EscargotEntity Escargot) {
