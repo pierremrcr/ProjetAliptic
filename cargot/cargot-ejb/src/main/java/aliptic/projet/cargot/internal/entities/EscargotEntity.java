@@ -1,7 +1,12 @@
 package aliptic.projet.cargot.internal.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public abstract class EscargotEntity {
 
+	@Id
 	private int id;
 	private boolean isDisponible;
 	private Calibre calibre;
