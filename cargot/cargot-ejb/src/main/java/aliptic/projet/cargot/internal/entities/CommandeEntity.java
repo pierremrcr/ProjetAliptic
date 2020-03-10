@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import aliptic.projet.cargot.internal.Calibre;
+
 @Entity
 public class CommandeEntity {
 	
@@ -15,6 +17,14 @@ public class CommandeEntity {
 	public CommandeEntity(int numeroCommande) {
 		this.numeroCommande = numeroCommande;
 		cartons = new ArrayList<CartonEntity>();
+	}
+	
+	public int getNumeroCommande() {
+		return numeroCommande;
+	}
+
+	public void setNumeroCommande(int numeroCommande) {
+		this.numeroCommande = numeroCommande;
 	}
 	
 	private double getRemiseQuantite() {

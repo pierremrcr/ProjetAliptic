@@ -18,7 +18,6 @@ public class GrossisteEntity {
 
 	public GrossisteEntity(int numeroSIRET, String libelle, String email, int numeroTelephone,
 			double tauxPreferentiel) {
-		super();
 		this.numeroSIRET = numeroSIRET;
 		this.libelle = libelle;
 		this.email = email;
