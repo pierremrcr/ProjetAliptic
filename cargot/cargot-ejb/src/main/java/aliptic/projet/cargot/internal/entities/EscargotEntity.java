@@ -22,7 +22,7 @@ public class EscargotEntity {
 	}
 	
 	public int getId() {
-		return id;
+		return id; 
 	}
 
 	public void setId(int id) {
