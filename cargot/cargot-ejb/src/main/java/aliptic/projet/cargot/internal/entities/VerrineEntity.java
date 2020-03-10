@@ -2,9 +2,13 @@ package aliptic.projet.cargot.internal.entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class VerrineEntity {
 	
+	@Id
 	private int id;
 	private List<EscargotEntity> escargots;
 	private Calibre calibre;
