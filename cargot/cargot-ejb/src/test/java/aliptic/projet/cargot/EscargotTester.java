@@ -12,6 +12,7 @@ import aliptic.projet.cargot.pub.services.EscargotServiceRemote;
 import aliptic.projet.cargot.pub.dtos.EscargotDTO;
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
+import aliptic.projet.cargot.internal.entities.EscargotEntity;
 
 public class EscargotTester {
 	
@@ -36,25 +37,20 @@ public class EscargotTester {
 //		props.put(Context.SECURITY_CREDENTIALS, "testpassword");
 		props.put("jboss.naming.client.ejb.context", true);
 		context = new InitialContext(props);
+		
+		
 	}
 	
 	@Test
 	public void testEscargotServiceRemote() throws NamingException {
-		EscargotServiceRemote service = (EscargotServiceRemote) context.lookup("METTRE_L_EJB_ICI");
-		EscargotDTO Escargot = new EscargotDTO(1, true, Calibre.PETIT, Espece.BOURGOGNE, 5.);
-		service.createEscargot(Escargot);
-		Escargot = service.readEscargot(1);
-		Escargot.setPoids(5.5);
+		EscargotServiceRemote service = (EscargotServiceRemote) context.lookup("ejb:cargot/cargot-ejb/CommandeDAO!aliptic.projet.cargot.internal.daos.CommandeDAO");
+		service.createEscargot(1, true, Calibre.PETIT, Espece.BOURGOGNE, 5.);
+		EscargotEntity Escargot = service.getEscargotById(1);
+		Escargot.setPoids(21.5);
 		service.updateEscargot(Escargot);
-		Escargot = new EscargotDTO(2, true, Calibre.MOYEN, Espece.PETIT_GRIS, 2.5);
-		service.createEscargot(Escargot);
-		Escargot = new EscargotDTO(3, true, Calibre.GRAND, Espece.BOURGOGNE, 25.);
-		service.createEscargot(Escargot);
-		List<EscargotDTO> Escargots = service.readEscargots();
-		assertTrue(Escargots.size() > 0);
-		service.deleteEscargot(Escargot);
-		service.deleteEscargotFromId(2);
-		service.deleteEscargotFromId(1);
+		service.createEscargot(2, true, Calibre.MOYEN, Espece.PETIT_GRIS, 2.5);
+		service.createEscargot(3, true, Calibre.GRAND, Espece.BOURGOGNE, 25.);
+		List<EscargotDTO> Escargots = service.getAllEscargots();
 	}
 
 
