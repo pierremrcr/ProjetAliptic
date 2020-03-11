@@ -41,7 +41,7 @@ public class EscargotTester {
 	
 	@Test
 	public void testEscargotServiceRemote() throws NamingException {
-		testinit();
+		testInit();
 		EscargotServiceRemote service = (EscargotServiceRemote) context.lookup("ejb:cargot/cargot-ejb/CommandeDAO!aliptic.projet.cargot.internal.daos.CommandeDAO");
 		service.createEscargot(1, true, Calibre.PETIT, Espece.BOURGOGNE, 5.);
 		EscargotEntity Escargot = service.getEscargotById(1);
