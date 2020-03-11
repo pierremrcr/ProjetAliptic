@@ -5,13 +5,10 @@ import aliptic.projet.cargot.pub.dtos.VerrineDTO;
 import java.util.ArrayList;
 import java.util.List;
 import aliptic.projet.cargot.internal.entities.EscargotEntity;
-import aliptic.projet.cargot.pub.dtos.EscargotDTO;
-import aliptic.projet.cargot.internal.utils.EscargotConverter;
 
 public class VerrineConverter {
 	
 	/*
-	
 	public static VerrineDTO entityToDTO(VerrineEntity VerrineEntity) {
 		List<EscargotDTO> escargotsDTO = new ArrayList<EscargotDTO>();
 		List<EscargotEntity> escargotsEntity = VerrineEntity.getEscargots();
@@ -26,9 +23,9 @@ public class VerrineConverter {
 				escargotsDTO
 				);
 	}
-	
 	*/
 	
+	/*
 	public static VerrineEntity DTOToEntity(VerrineDTO VerrineDTO) {
 		List<EscargotEntity> escargotsEntity = new ArrayList<EscargotEntity>();
 		List<EscargotDTO> escargotsDTO = VerrineDTO.getEscargots();
@@ -43,5 +40,6 @@ public class VerrineConverter {
 				escargotsEntity
 				);
 	}
+	*/
 
 }

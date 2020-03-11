@@ -31,6 +31,7 @@ public class CommandeDTO implements Serializable {
 		return 0.;
 	}
 	
+	/*
 	public double getTotal() {
 		double total = 0;
 		for (CartonDTO carton: cartons) {
@@ -52,5 +53,6 @@ public class CommandeDTO implements Serializable {
 		total -= total * (getRemiseQuantite() + getRemiseTransport());
 		return total;
 	}
+	*/
 
 }
