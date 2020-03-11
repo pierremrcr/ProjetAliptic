@@ -12,11 +12,10 @@ public class CommandeEntity {
 	
 	@Id
 	private int numeroCommande;
-	private List<CartonEntity> cartons;
+	
 	
 	public CommandeEntity(int numeroCommande) {
 		this.numeroCommande = numeroCommande;
-		cartons = new ArrayList<CartonEntity>();
 	}
 	
 	public int getNumeroCommande() {
@@ -34,6 +33,8 @@ public class CommandeEntity {
 	private double getRemiseTransport() {
 		return 0.;
 	}
+	
+	/*
 	
 	public double getTotal() {
 		double total = 0;
@@ -56,5 +57,7 @@ public class CommandeEntity {
 		total -= total * (getRemiseQuantite() + getRemiseTransport());
 		return total;
 	}
+	
+	*/
 
 }

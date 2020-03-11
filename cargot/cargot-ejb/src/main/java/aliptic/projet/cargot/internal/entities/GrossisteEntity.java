@@ -14,7 +14,7 @@ public class GrossisteEntity {
 	private String email;
 	private int numeroTelephone;
 	private double tauxPreferentiel;
-	private List<AdresseEntity> adresses;
+	//private List<AdresseEntity> adresses;
 
 	public GrossisteEntity(int numeroSIRET, String libelle, String email, int numeroTelephone,
 			double tauxPreferentiel) {
@@ -23,7 +23,7 @@ public class GrossisteEntity {
 		this.email = email;
 		this.numeroTelephone = numeroTelephone;
 		this.tauxPreferentiel = tauxPreferentiel;
-		adresses = new ArrayList<AdresseEntity>();
+		//adresses = new ArrayList<AdresseEntity>();
 	}
 	
 	public int getNumeroSIRET() {
@@ -66,6 +66,7 @@ public class GrossisteEntity {
 		this.tauxPreferentiel = tauxPreferentiel;
 	}
 
+	/*
 	public List<AdresseEntity> getAdresses() {
 		return adresses;
 	}
@@ -73,5 +74,7 @@ public class GrossisteEntity {
 	public void setAdresses(List<AdresseEntity> adresses) {
 		this.adresses = adresses;
 	}
+	
+	*/
 
 }
