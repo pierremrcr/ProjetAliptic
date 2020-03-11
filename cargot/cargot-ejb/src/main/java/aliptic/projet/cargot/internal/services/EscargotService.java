@@ -1,52 +1,64 @@
 package aliptic.projet.cargot.internal.services;
 
+
+
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import aliptic.projet.cargot.pub.dtos.EscargotDTO;
+import aliptic.projet.cargot.internal.Calibre;
+import aliptic.projet.cargot.internal.Espece;
 import aliptic.projet.cargot.internal.daos.EscargotDAO;
+import aliptic.projet.cargot.internal.entities.EscargotEntity;
 import aliptic.projet.cargot.pub.services.EscargotServiceRemote;
 
 @Stateless
 public class EscargotService implements EscargotServiceRemote {
 	
 	@EJB
-	EscargotDAO EscargotDAO;
+	EscargotDAO escargotDAO;
 
 	@Override
-	public void createEscargot(EscargotDTO escargot) {
-		// TODO Auto-generated method stub
-
+	public void createEscargot(int id, boolean isDisponible, Calibre calibre, Espece espece, double poids) {
+		escargotDAO.createEscargot(id, isDisponible, calibre, espece, poids);
+		
+	}
+	
+	@Override
+	public EscargotEntity getEscargotById(int id) {
+		EscargotEntity escargot = escargotDAO.getEscargotById(id);
+		return escargot;
 	}
 
 	@Override
-	public EscargotDTO readEscargot(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<EscargotEntity> getAllEscargots() {
+		List<EscargotEntity> escargots = escargotDAO.getAllEscargot();
+		return escargots;
+	}
+
+
+	@Override
+	public void deleteEscargotById(int id) {
+		escargotDAO.deleteEscargot(id);	
 	}
 
 	@Override
-	public List<EscargotDTO> readEscargots() {
-		// TODO Auto-generated method stub
-		return null;
+	public void updateEscargot(int id, boolean isDisponible, Calibre calibre, Espece espece, double poids) {
+		EscargotEntity escargot = escargotDAO.getEscargotById(id);
+		escargot.setCalibre(calibre);
+		escargot.setDisponible(isDisponible);
+		escargot.setEspece(espece);
+		escargot.setPoids(poids);
+		escargotDAO.modifierEscargot(escargot);	
 	}
 
 	@Override
-	public void updateEscargot(EscargotDTO escargot) {
+	public void deleteEscargot(EscargotEntity escargot) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
-	@Override
-	public void deleteEscargot(EscargotDTO escargot) {
-		// TODO Auto-generated method stub
+	
 
-	}
-
-	@Override
-	public void deleteEscargotFromId(int id) {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 }
