@@ -94,6 +94,17 @@
             <artifactId>jboss-annotations-api_1.3_spec</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+        	<groupId>org.wildfly</groupId>
+        	<artifactId>wildfly-client-all</artifactId>
+        	<version>18.0.0.Final</version>
+        	<scope>test</scope>
+        </dependency>
+        <dependency>
+			<groupId>com.sun.xml.ws</groupId>
+			<artifactId>jaxws-rt</artifactId>
+			<version>2.2.5</version>
+		</dependency>
     </dependencies>
 
     <build>
