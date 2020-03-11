@@ -11,7 +11,7 @@ import aliptic.projet.cargot.internal.entities.VerrineEntity;
 @Local
 public class VerrineDAO {
 	
-	@PersistenceContext(unitName="A_MODIFIER")
+	@PersistenceContext(unitName="cargotPersistenceUnit")
 	EntityManager entityManager;
 
 	public void create(VerrineEntity Verrine) {

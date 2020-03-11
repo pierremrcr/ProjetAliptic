@@ -11,7 +11,7 @@ import aliptic.projet.cargot.internal.entities.AdresseEntity;
 @Local
 public class AdresseDAO {
 	
-	@PersistenceContext(unitName="A_MODIFIER")
+	@PersistenceContext(unitName="cargotPersistenceUnit")
 	EntityManager entityManager;
 
 	public void create(AdresseEntity Adresse) {

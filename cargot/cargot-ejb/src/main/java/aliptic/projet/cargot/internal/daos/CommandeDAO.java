@@ -11,7 +11,7 @@ import aliptic.projet.cargot.internal.entities.CommandeEntity;
 @Local
 public class CommandeDAO {
 	
-	@PersistenceContext(unitName="A_MODIFIER")
+	@PersistenceContext(unitName="cargotPersistenceUnit")
 	EntityManager entityManager;
 	
 	public void create(CommandeEntity Commande) {
