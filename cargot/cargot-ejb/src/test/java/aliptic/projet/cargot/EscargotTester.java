@@ -37,8 +37,6 @@ public class EscargotTester {
 //		props.put(Context.SECURITY_CREDENTIALS, "testpassword");
 		props.put("jboss.naming.client.ejb.context", true);
 		context = new InitialContext(props);
-		
-		
 	}
 	
 	@Test
@@ -50,7 +48,7 @@ public class EscargotTester {
 		service.updateEscargot(Escargot);
 		service.createEscargot(2, true, Calibre.MOYEN, Espece.PETIT_GRIS, 2.5);
 		service.createEscargot(3, true, Calibre.GRAND, Espece.BOURGOGNE, 25.);
-		List<EscargotDTO> Escargots = service.getAllEscargots();
+		List<EscargotEntity> Escargots = service.getAllEscargots();
 	}
 
 
