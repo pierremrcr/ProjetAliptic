@@ -12,8 +12,8 @@ public class EscargotEntity {
 	@Id
 	private int id;
 	private boolean isDisponible;
-	private Calibre calibre;
-	private Espece espece;
+	public Calibre calibre;
+	public Espece espece;
 	private double poids;
 
 	public EscargotEntity(int id, boolean isDisponible, Calibre calibre, Espece espece, double poids) {

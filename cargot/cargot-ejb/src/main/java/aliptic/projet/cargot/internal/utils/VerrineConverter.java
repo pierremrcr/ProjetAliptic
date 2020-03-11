@@ -10,6 +10,8 @@ import aliptic.projet.cargot.internal.utils.EscargotConverter;
 
 public class VerrineConverter {
 	
+	/*
+	
 	public static VerrineDTO entityToDTO(VerrineEntity VerrineEntity) {
 		List<EscargotDTO> escargotsDTO = new ArrayList<EscargotDTO>();
 		List<EscargotEntity> escargotsEntity = VerrineEntity.getEscargots();
@@ -24,6 +26,8 @@ public class VerrineConverter {
 				escargotsDTO
 				);
 	}
+	
+	*/
 	
 	public static VerrineEntity DTOToEntity(VerrineDTO VerrineDTO) {
 		List<EscargotEntity> escargotsEntity = new ArrayList<EscargotEntity>();
