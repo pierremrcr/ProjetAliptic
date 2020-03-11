@@ -9,17 +9,17 @@ import aliptic.projet.cargot.pub.dtos.EscargotDTO;
 public class VerrineDTO implements Serializable {
 	
 	private int id;
-	private Calibre calibre;
-	private Espece espece;
-	private int quantiteMax;
-	private List<EscargotDTO> escargots;
+	private String calibre;
+	private String espece;
+	private int quantite;
+	private double poids;
 	
-	public VerrineDTO(int id, Calibre calibre, Espece espece, int quantiteMax, List<EscargotDTO> escargots) {
+	public VerrineDTO(int id, String calibre, String espece, int quantite, double poids) {
 		this.id = id;
 		this.calibre = calibre;
 		this.espece = espece;
-		this.quantiteMax = quantiteMax;
-		this.escargots = escargots;
+		this.quantite = quantite;
+		this.poids = poids;
 	}
 
 	public int getId() {
@@ -30,40 +30,36 @@ public class VerrineDTO implements Serializable {
 		this.id = id;
 	}
 	
-	public Calibre getCalibre() {
+	public String getCalibre() {
 		return calibre;
 	}
 
-	public void setCalibre(Calibre calibre) {
+	public void setCalibre(String calibre) {
 		this.calibre = calibre;
 	}
 
-	public Espece getEspece() {
+	public String getEspece() {
 		return espece;
 	}
 
-	public void setEspece(Espece espece) {
+	public void setEspece(String espece) {
 		this.espece = espece;
 	}
 
-	public int getQuantiteMax() {
-		return quantiteMax;
+	public int getQuantite() {
+		return quantite;
 	}
 
-	public void setQuantiteMax(int quantiteMax) {
-		this.quantiteMax = quantiteMax;
-	}
-	
-	public List<EscargotDTO> getEscargots() {
-		return escargots;
-	}
-	
-	public void setEscargots(List<EscargotDTO> escargots) {
-		this.escargots = escargots;
+	public void setQuantite(int quantite) {
+		this.quantite = quantite;
 	}
 	
 	public double getPoids() {
-		return escargots.get(0).getPoids() * escargots.size();
+		return poids;
+	}
+	
+	public void setPoids(double poids) {
+		this.poids = poids;
 	}
 
 }
