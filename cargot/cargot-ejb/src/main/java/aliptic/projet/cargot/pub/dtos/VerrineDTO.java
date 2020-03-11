@@ -1,10 +1,6 @@
 package aliptic.projet.cargot.pub.dtos;
 
 import java.io.Serializable;
-import java.util.List;
-import aliptic.projet.cargot.internal.Calibre;
-import aliptic.projet.cargot.internal.Espece;
-import aliptic.projet.cargot.pub.dtos.EscargotDTO;
 
 public class VerrineDTO implements Serializable {
 	
