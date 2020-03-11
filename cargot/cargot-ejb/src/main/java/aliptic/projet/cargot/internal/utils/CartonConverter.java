@@ -10,6 +10,8 @@ import aliptic.projet.cargot.internal.utils.VerrineConverter;
 
 public class CartonConverter {
 	
+	/*
+	
 	public static CartonDTO entityToDTO(CartonEntity CartonEntity) {
 		List<VerrineDTO> verrinesDTO = new ArrayList<VerrineDTO>();
 		List<VerrineEntity> verrinesEntity = CartonEntity.getVerrines();
@@ -18,6 +20,8 @@ public class CartonConverter {
 		}
 		return new CartonDTO(CartonEntity.getId(), verrinesDTO);
 	}
+	
+	*/
 	
 	public static CartonEntity DTOToEntity(CartonDTO CartonDTO) {
 		List<VerrineEntity> verrinesEntity = new ArrayList<VerrineEntity>();

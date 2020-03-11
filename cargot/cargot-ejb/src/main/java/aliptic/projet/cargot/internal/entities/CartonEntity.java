@@ -9,11 +9,11 @@ public class CartonEntity {
 	
 	@Id
 	private int id;
-	private List<VerrineEntity> verrines;
+	//private List<VerrineEntity> verrines;
 	
 	public CartonEntity(int id, List<VerrineEntity> verrines) {
 		this.id = id;
-		this.verrines = verrines;
+		//this.verrines = verrines;
 	}
 	
 	public int getId() {
@@ -24,6 +24,7 @@ public class CartonEntity {
 		this.id = id;
 	}
 	
+	/*
 	public List<VerrineEntity> getVerrines() {
 		return verrines;
 	}
@@ -31,6 +32,7 @@ public class CartonEntity {
 	public void setVerrines(List<VerrineEntity> verrines) {
 		this.verrines = verrines;
 	}
+
 	
 	public double getPoids() {
 		double total = 0.;
@@ -39,5 +41,7 @@ public class CartonEntity {
 		}
 		return total;
 	}
+	
+	*/
 
 }
