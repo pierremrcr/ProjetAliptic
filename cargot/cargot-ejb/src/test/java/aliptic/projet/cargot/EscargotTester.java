@@ -44,7 +44,7 @@ public class EscargotTester {
 		EscargotDTO Escargot = new EscargotDTO(1, true, Calibre.PETIT, Espece.BOURGOGNE, 5.);
 		service.createEscargot(Escargot);
 		Escargot = service.readEscargot(1);
-		Escargot.setPoids(5.5);
+		Escargot.setPoids(21.5);
 		service.updateEscargot(Escargot);
 		Escargot = new EscargotDTO(2, true, Calibre.MOYEN, Espece.PETIT_GRIS, 2.5);
 		service.createEscargot(Escargot);
