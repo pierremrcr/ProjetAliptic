@@ -1,7 +1,5 @@
 package aliptic.projet.cargot.internal.services;
 
-
-
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -56,9 +54,5 @@ public class EscargotService implements EscargotServiceRemote {
 		// TODO Auto-generated method stub
 		
 	}
-
-	
-
-	
 
 }
