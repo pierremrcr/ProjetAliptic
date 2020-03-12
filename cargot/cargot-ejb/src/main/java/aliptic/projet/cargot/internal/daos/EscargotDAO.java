@@ -25,8 +25,7 @@ public class EscargotDAO {
 	}
 
 	public EscargotEntity getEscargotById(int id) {
-		EscargotEntity e=(EscargotEntity) entityManager.createQuery("Select p from EscargotEntity p where p.id=:id").setParameter("id",id).getSingleResult();
-	return e;
+		return (EscargotEntity) entityManager.createQuery("Select p from EscargotEntity p where p.id=:id").setParameter("id",id).getSingleResult();
 	}
 	
 	public List<EscargotEntity> getAllEscargot() {
@@ -35,11 +34,11 @@ public class EscargotDAO {
 		return escargots;
 	}
 
-	public void modifierEscargot(EscargotEntity Escargot) {
-		entityManager.merge(Escargot);
+	public void modifierEscargot(EscargotEntity escargot) {
+		entityManager.merge(escargot);
 	}
 
-	public void deleteEscargot(int id) {
+	public void deleteEscargotById(int id) {
 		EscargotEntity escargot = getEscargotById(id);
 		entityManager.remove(escargot);
 	}
