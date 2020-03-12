@@ -1,21 +1,21 @@
 package aliptic.projet.cargot.pub.dtos;
 
 import java.io.Serializable;
+import aliptic.projet.cargot.internal.Calibre;
+import aliptic.projet.cargot.internal.Espece;
 
 public class VerrineDTO implements Serializable {
 	
 	private int id;
-	private String calibre;
-	private String espece;
+	private Calibre calibre;
+	private Espece espece;
 	private int quantite;
-	private double poids;
 	
-	public VerrineDTO(int id, String calibre, String espece, int quantite, double poids) {
+	public VerrineDTO(int id, Calibre calibre, Espece espece, int quantite) {
 		this.id = id;
 		this.calibre = calibre;
 		this.espece = espece;
 		this.quantite = quantite;
-		this.poids = poids;
 	}
 
 	public int getId() {
@@ -26,19 +26,19 @@ public class VerrineDTO implements Serializable {
 		this.id = id;
 	}
 	
-	public String getCalibre() {
+	public Calibre getCalibre() {
 		return calibre;
 	}
 
-	public void setCalibre(String calibre) {
+	public void setCalibre(Calibre calibre) {
 		this.calibre = calibre;
 	}
 
-	public String getEspece() {
+	public Espece getEspece() {
 		return espece;
 	}
 
-	public void setEspece(String espece) {
+	public void setEspece(Espece espece) {
 		this.espece = espece;
 	}
 
@@ -48,14 +48,6 @@ public class VerrineDTO implements Serializable {
 
 	public void setQuantite(int quantite) {
 		this.quantite = quantite;
-	}
-	
-	public double getPoids() {
-		return poids;
-	}
-	
-	public void setPoids(double poids) {
-		this.poids = poids;
 	}
 
 }
