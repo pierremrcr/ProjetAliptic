@@ -1,5 +1,6 @@
 package aliptic.projet.cargot;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 import javax.naming.Context;
@@ -16,7 +17,7 @@ public class EscargotTester {
 	
 	static EscargotServiceRemote service;
 	
-	@Test
+	//@Test
 	public void testEscargotServiceRemote() throws NamingException {
 		service.createEscargot(1, true, Calibre.PETIT, Espece.BOURGOGNE, 5.);
 		EscargotEntity Escargot = service.getEscargotById(1);
@@ -33,6 +34,27 @@ public class EscargotTester {
 		for (EscargotEntity escargot : escargots){
 			System.out.println(escargot.getId() + " " + escargot.getCalibre() + " " + escargot.getEspece());
 			service.deleteEscargotById(escargot.getId());
+		}
+	}
+	
+	@Test
+	public void testcreateEscargots() throws NamingException {
+		int id=0;
+		for(int i=0;i<12;i++) {
+			service.createEscargot(id, true, Calibre.PETIT, Espece.BOURGOGNE, 25);
+			id++;
+		}
+		for(int i=0;i<24;i++) {
+			service.createEscargot(id, true, Calibre.MOYEN, Espece.BOURGOGNE, 50);
+			id++;
+		}
+		for(int i=0;i<12;i++) {
+			service.createEscargot(id, true, Calibre.MOYEN, Espece.PETIT_GRIS, 40);
+			id++;
+		}
+		List<EscargotEntity> escargots = service.getAllEscargots();
+		for (EscargotEntity escargot : escargots){
+			System.out.println(escargot.getId() + " " + escargot.getCalibre() + " " + escargot.getEspece());
 		}
 	}
 
