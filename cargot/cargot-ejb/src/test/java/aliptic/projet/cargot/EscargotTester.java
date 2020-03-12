@@ -51,6 +51,12 @@ public class EscargotTester {
 		List<EscargotEntity> escargots = service.getAllEscargots();
 		for (EscargotEntity escargot : escargots){
 			System.out.println(escargot.getId() + " " + escargot.getCalibre() + " " + escargot.getEspece());
+			service.deleteEscargotById(escargot.getId());
+		}
+		escargots = service.getAllEscargots();
+		for (EscargotEntity escargot : escargots){
+			System.out.println(escargot.getId() + " " + escargot.getCalibre() + " " + escargot.getEspece());
+			service.deleteEscargotById(escargot.getId());
 		}
 	}
 

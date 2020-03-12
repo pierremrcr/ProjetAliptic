@@ -11,3 +11,4 @@ cargot/cargot-ear/target/m2e-wtp/ear-resources/META-INF/maven/aliptic.projet/car
 cargot/cargot-ear/target/m2e-wtp/ear-resources/META-INF/MANIFEST.MF
 cargot/cargot-ear/.settings/org.eclipse.wst.common.component
 *.MF
+cargot/cargot-ejb/target/classes/META-INF/MANIFEST.MF
