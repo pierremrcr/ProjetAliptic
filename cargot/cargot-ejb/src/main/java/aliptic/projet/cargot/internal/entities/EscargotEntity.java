@@ -15,11 +15,11 @@ import aliptic.projet.cargot.internal.Espece;
 public class EscargotEntity implements Serializable{
 
 	@Id
-	private int id;
-	private boolean isDisponible;
-	public Calibre calibre;
-	public Espece espece;
-	private double poids;
+	private Integer id;
+	private Boolean isDisponible;
+	private Calibre calibre;
+	private Espece espece;
+	private Double poids;
 	
 	@ManyToOne
 	@JoinColumn(name="verrineid")
