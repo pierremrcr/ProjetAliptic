@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
@@ -17,6 +19,10 @@ public class EscargotEntity implements Serializable{
 	public Calibre calibre;
 	public Espece espece;
 	private double poids;
+	
+	@ManyToOne
+	@JoinColumn(name="verrineid",insertable=false, updatable=false)
+	private VerrineEntity verrine;
 
 	public EscargotEntity() {
 		super();
