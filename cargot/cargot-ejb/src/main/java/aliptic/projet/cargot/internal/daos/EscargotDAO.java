@@ -1,11 +1,13 @@
 package aliptic.projet.cargot.internal.daos;
 
 import java.util.List;
+
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
 import aliptic.projet.cargot.internal.entities.EscargotEntity;
@@ -23,7 +25,8 @@ public class EscargotDAO {
 	}
 
 	public EscargotEntity getEscargotById(int id) {
-		return (EscargotEntity) entityManager.createQuery("Select p from EscargotEntity p where p.id=:id").setParameter("id",id).getSingleResult();
+		EscargotEntity e=(EscargotEntity) entityManager.createQuery("Select p from EscargotEntity p where p.id=:id").setParameter("id",id).getSingleResult();
+	return e;
 	}
 	
 	public List<EscargotEntity> getAllEscargot() {
