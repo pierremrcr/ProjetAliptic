@@ -28,7 +28,7 @@ public class VerrineService implements VerrineServiceRemote {
 	@Override
 	public VerrineDTO getVerrineById(int id) {
 		VerrineEntity verrine = verrineDAO.getVerrineById(id);
-	//	VerrineDTO verrineDTO = (verrine);
+		VerrineDTO verrineDTO = VerrineConverter.entityToDTO(verrine);
 		return verrineDTO;
 	}
 
