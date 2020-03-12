@@ -29,8 +29,7 @@ public class EscargotEntity implements Serializable{
 		super();
 	}
 
-	public EscargotEntity(int id, boolean isDisponible, Calibre calibre, Espece espece, double poids) {
-		this.id = id;
+	public EscargotEntity(boolean isDisponible, Calibre calibre, Espece espece, double poids) {
 		this.isDisponible = isDisponible;
 		this.calibre = calibre;
 		this.espece = espece;

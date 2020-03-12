@@ -11,7 +11,7 @@ import aliptic.projet.cargot.internal.entities.EscargotEntity;
 @Remote
 public interface EscargotServiceRemote {
 	
-	public void createEscargot(int id, boolean isDisponible, Calibre calibre, Espece espece, double poids);
+	public void createEscargot(boolean isDisponible, Calibre calibre, Espece espece, double poids);
 	public EscargotEntity getEscargotById(int id);
 	public List<EscargotEntity> getAllEscargots();
 	public void updateEscargot(int id, boolean isDisponible, Calibre calibre, Espece espece, double poids);

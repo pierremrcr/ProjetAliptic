@@ -18,8 +18,8 @@ public class VerrineService implements VerrineServiceRemote {
 	VerrineDAO verrineDAO;
 
 	@Override
-	public void createVerrine(int id, Calibre calibre, Espece espece, int quantiteMax) {
-		verrineDAO.create(id, calibre, espece, quantiteMax);
+	public void createVerrine(Calibre calibre, Espece espece, int quantiteMax) {
+		verrineDAO.create(calibre, espece, quantiteMax);
 		
 	}
 
