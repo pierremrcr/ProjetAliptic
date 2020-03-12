@@ -21,29 +21,23 @@ public class VerrineEntity {
 	private List<EscargotEntity> escargots;
 	
 	
-	
 	public VerrineEntity() {
 		super();
 	}
 
-
-	public VerrineEntity(int id, Calibre calibre, Espece espece, int quantiteMax, List<EscargotEntity> escargots) {
-		this.id = id;
+	public VerrineEntity(Calibre calibre, Espece espece, int quantiteMax, List<EscargotEntity> escargots) {
 		this.calibre = calibre;
 		this.espece = espece;
 		this.quantiteMax = quantiteMax;
 		this.escargots = escargots;
 	}
 	
-	
-	public VerrineEntity(int id, Calibre calibre, Espece espece, int quantiteMax) {
+	public VerrineEntity(Calibre calibre, Espece espece, int quantiteMax) {
 		super();
-		this.id = id;
 		this.calibre = calibre;
 		this.espece = espece;
 		this.quantiteMax = quantiteMax;
 	}
-
 
 
 	public int getId() {
