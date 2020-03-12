@@ -49,10 +49,4 @@ public class EscargotService implements EscargotServiceRemote {
 		escargotDAO.modifierEscargot(escargot);	
 	}
 
-	@Override
-	public void deleteEscargot(EscargotEntity escargot) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

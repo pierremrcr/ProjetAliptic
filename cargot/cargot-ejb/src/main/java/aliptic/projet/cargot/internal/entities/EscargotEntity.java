@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
 
+@SuppressWarnings("serial")
 @Entity
 public class EscargotEntity implements Serializable{
 

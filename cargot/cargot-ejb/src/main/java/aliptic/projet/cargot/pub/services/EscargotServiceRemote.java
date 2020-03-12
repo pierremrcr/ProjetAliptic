@@ -15,7 +15,6 @@ public interface EscargotServiceRemote {
 	public EscargotEntity getEscargotById(int id);
 	public List<EscargotEntity> getAllEscargots();
 	public void updateEscargot(int id, boolean isDisponible, Calibre calibre, Espece espece, double poids);
-	public void deleteEscargot(EscargotEntity escargot);
 	public void deleteEscargotById(int id);
 
 }
