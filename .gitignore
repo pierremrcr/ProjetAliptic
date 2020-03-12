@@ -10,3 +10,4 @@ cargot/cargot-ejb/target/classes/META-INF/MANIFEST.MF
 cargot/cargot-ear/target/m2e-wtp/ear-resources/META-INF/maven/aliptic.projet/cargot-ear/pom.properties
 cargot/cargot-ear/target/m2e-wtp/ear-resources/META-INF/MANIFEST.MF
 cargot/cargot-ear/.settings/org.eclipse.wst.common.component
+*.MF
