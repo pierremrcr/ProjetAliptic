@@ -19,20 +19,18 @@ public class VerrineService implements VerrineServiceRemote {
 	VerrineDAO verrineDAO;
 
 	@Override
-	public void createVerrine(int id, Calibre calibre, Espece espece, int quantiteMax, List<EscargotEntity> escargots) {
-		verrineDAO.create(id, calibre, espece, quantiteMax, escargots);
+	public void createVerrine(int id, Calibre calibre, Espece espece, int quantiteMax) {
+		verrineDAO.create(id, calibre, espece, quantiteMax);
 		
 	}
 
-	/*
+	
 	@Override
 	public VerrineDTO getVerrineById(int id) {
 		VerrineEntity verrine = verrineDAO.getVerrineById(id);
-		VerrineDTO verrineDTO = VerrineConverter.entityToDTO(verrine);
+	//	VerrineDTO verrineDTO = (verrine);
 		return verrineDTO;
 	}
-	
-	*/
 
 	@Override
 	public List<VerrineDTO> getAllVerrines() {
@@ -41,7 +39,7 @@ public class VerrineService implements VerrineServiceRemote {
 	}
 
 	@Override
-	public void updateVerrine(int id, Calibre calibre, Espece espece, int quantiteMax, List<EscargotEntity> escargots) {
+	public void updateVerrine(int id, Calibre calibre, Espece espece, int quantiteMax) {
 		VerrineEntity verrine = verrineDAO.getVerrineById(id);
 		verrine.setCalibre(calibre);
 		verrine.setEspece(espece);
@@ -50,22 +48,11 @@ public class VerrineService implements VerrineServiceRemote {
 		verrineDAO.update(verrine);
 		
 	}
-	@Override
-	public void deleteVerrine(VerrineEntity verrine) {
-		verrineDAO.delete(verrine);
-		
-	}
+
 
 	@Override
 	public void deleteVerrineById(int id) {
 		verrineDAO.deleteVerrineById(id);
 	}
-
-	@Override
-	public VerrineDTO getVerrineById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	
 }
