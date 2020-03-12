@@ -22,7 +22,7 @@ public class EscargotEntity implements Serializable{
 	private double poids;
 	
 	@ManyToOne
-	@JoinColumn(name="verrineid",insertable=false, updatable=false)
+	@JoinColumn(name="verrineid")
 	private VerrineEntity verrine;
 
 	public EscargotEntity() {
