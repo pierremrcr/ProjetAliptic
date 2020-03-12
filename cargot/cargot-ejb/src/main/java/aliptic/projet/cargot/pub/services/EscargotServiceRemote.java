@@ -1,12 +1,12 @@
 package aliptic.projet.cargot.pub.services;
 
 import java.util.List;
+
 import javax.ejb.Remote;
 
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
 import aliptic.projet.cargot.internal.entities.EscargotEntity;
-import aliptic.projet.cargot.pub.dtos.EscargotDTO;
 
 @Remote
 public interface EscargotServiceRemote {
