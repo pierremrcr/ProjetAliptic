@@ -19,8 +19,8 @@ public class VerrineDAO {
 	@PersistenceContext(unitName="cargotPersistenceUnit")
 	EntityManager entityManager;
 
-	public void create(int id, Calibre calibre, Espece espece, int quantiteMax, List<EscargotEntity> escargots) {
-		VerrineEntity verrine = new VerrineEntity(id, calibre, espece, quantiteMax, escargots);
+	public void create(int id, Calibre calibre, Espece espece, int quantiteMax) {
+		VerrineEntity verrine = new VerrineEntity(id, calibre, espece, quantiteMax);
 		entityManager.persist(verrine);
 	}
 

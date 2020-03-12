@@ -17,7 +17,7 @@ public class VerrineEntity {
 	private int quantiteMax;
 	//private List<EscargotEntity> escargots;
 	
-	public VerrineEntity(int id, Calibre calibre, Espece espece, int quantiteMax, List<EscargotEntity> escargots) {
+	public VerrineEntity(int id, Calibre calibre, Espece espece, int quantiteMax) {
 		this.id = id;
 		this.calibre = calibre;
 		this.espece = espece;
