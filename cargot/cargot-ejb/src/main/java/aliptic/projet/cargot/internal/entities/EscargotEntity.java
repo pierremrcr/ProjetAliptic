@@ -1,5 +1,7 @@
 package aliptic.projet.cargot.internal.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,7 +9,7 @@ import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
 
 @Entity
-public class EscargotEntity {
+public class EscargotEntity implements Serializable{
 
 	@Id
 	private int id;
@@ -15,8 +17,6 @@ public class EscargotEntity {
 	public Calibre calibre;
 	public Espece espece;
 	private double poids;
-	
-	
 
 	public EscargotEntity() {
 		super();
