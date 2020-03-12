@@ -15,6 +15,12 @@ public class EscargotEntity {
 	public Calibre calibre;
 	public Espece espece;
 	private double poids;
+	
+	
+
+	public EscargotEntity() {
+		super();
+	}
 
 	public EscargotEntity(int id, boolean isDisponible, Calibre calibre, Espece espece, double poids) {
 		this.id = id;
