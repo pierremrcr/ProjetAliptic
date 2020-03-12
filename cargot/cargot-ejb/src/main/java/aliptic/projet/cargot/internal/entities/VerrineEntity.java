@@ -3,6 +3,7 @@ package aliptic.projet.cargot.internal.entities;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
@@ -15,14 +16,16 @@ public class VerrineEntity {
 	private Calibre calibre;
 	private Espece espece;
 	private int quantiteMax;
-	//private List<EscargotEntity> escargots;
+	
+	@OneToMany(mappedBy="verrine")
+	private List<EscargotEntity> escargots;
 	
 	public VerrineEntity(int id, Calibre calibre, Espece espece, int quantiteMax) {
 		this.id = id;
 		this.calibre = calibre;
 		this.espece = espece;
 		this.quantiteMax = quantiteMax;
-		//this.escargots = escargots;
+		this.escargots = escargots;
 	}
 
 	public int getId() {
@@ -57,7 +60,7 @@ public class VerrineEntity {
 		this.quantiteMax = quantiteMax;
 	}
 	
-	/*
+	
 	public List<EscargotEntity> getEscargots() {
 		return escargots;
 	}
@@ -70,6 +73,6 @@ public class VerrineEntity {
 		return escargots.get(0).getPoids() * escargots.size();
 	}
 	
-	*/
+	
 
 }

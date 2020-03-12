@@ -36,7 +36,7 @@ public class EscargotService implements EscargotServiceRemote {
 
 	@Override
 	public void deleteEscargotById(int id) {
-		escargotDAO.deleteEscargot(id);	
+		escargotDAO.deleteEscargotById(id);	
 	}
 
 	@Override
