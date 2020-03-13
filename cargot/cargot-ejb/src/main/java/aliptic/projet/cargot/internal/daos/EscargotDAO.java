@@ -19,8 +19,8 @@ public class EscargotDAO {
 	@PersistenceContext(unitName="cargotPersistenceUnit")
 	EntityManager entityManager;
 
-	public void createEscargot(int id, boolean isDisponible, Calibre calibre, Espece espece, double poids) {
-		EscargotEntity escargot = new EscargotEntity(id, isDisponible, calibre, espece, poids);
+	public void createEscargot(boolean isDisponible, Calibre calibre, Espece espece, double poids) {
+		EscargotEntity escargot = new EscargotEntity(isDisponible, calibre, espece, poids);
 		entityManager.persist(escargot);
 	}
 

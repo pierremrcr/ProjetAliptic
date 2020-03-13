@@ -12,7 +12,7 @@ import aliptic.projet.cargot.pub.dtos.VerrineDTO;
 @Remote
 public interface VerrineServiceRemote {
 	
-	public void createVerrine(int id, Calibre calibre, Espece espece, int quantiteMax);
+	public void createVerrine(Calibre calibre, Espece espece, int quantiteMax);
 	public VerrineDTO getVerrineById(int id);
 	public List<VerrineDTO> getAllVerrines();
 	public void updateVerrine(int id, Calibre calibre, Espece espece, int quantiteMax);

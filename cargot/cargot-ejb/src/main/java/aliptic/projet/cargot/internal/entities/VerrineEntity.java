@@ -12,10 +12,10 @@ import aliptic.projet.cargot.internal.Espece;
 public class VerrineEntity {
 	
 	@Id
-	private int id;
+	private Integer id;
 	private Calibre calibre;
 	private Espece espece;
-	private int quantiteMax;
+	private Integer quantiteMax;
 	
 	@OneToMany(mappedBy="verrine")
 	private List<EscargotEntity> escargots;
@@ -24,24 +24,19 @@ public class VerrineEntity {
 		super();
 	}
 
-
-	public VerrineEntity(int id, Calibre calibre, Espece espece, int quantiteMax, List<EscargotEntity> escargots) {
-		this.id = id;
+	public VerrineEntity(Calibre calibre, Espece espece, int quantiteMax, List<EscargotEntity> escargots) {
 		this.calibre = calibre;
 		this.espece = espece;
 		this.quantiteMax = quantiteMax;
 		this.escargots = escargots;
 	}
 	
-	
-	public VerrineEntity(int id, Calibre calibre, Espece espece, int quantiteMax) {
+	public VerrineEntity(Calibre calibre, Espece espece, int quantiteMax) {
 		super();
-		this.id = id;
 		this.calibre = calibre;
 		this.espece = espece;
 		this.quantiteMax = quantiteMax;
 	}
-
 
 
 	public int getId() {

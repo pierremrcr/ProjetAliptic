@@ -15,33 +15,11 @@ import aliptic.projet.cargot.internal.Espece;
 public class EscargotEntity implements Serializable{
 
 	@Id
-	private int id;
-	private boolean isDisponible;
+	private Integer id;
+	private Boolean isDisponible;
 	private Calibre calibre;
 	private Espece espece;
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + id;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		EscargotEntity other = (EscargotEntity) obj;
-		if (id != other.id)
-			return false;
-		return true;
-	}
-
-	private double poids;
+	private Double poids;
 	
 	@ManyToOne
 	@JoinColumn(name="verrineid")
@@ -51,8 +29,7 @@ public class EscargotEntity implements Serializable{
 		super();
 	}
 
-	public EscargotEntity(int id, boolean isDisponible, Calibre calibre, Espece espece, double poids) {
-		this.id = id;
+	public EscargotEntity(boolean isDisponible, Calibre calibre, Espece espece, double poids) {
 		this.isDisponible = isDisponible;
 		this.calibre = calibre;
 		this.espece = espece;
