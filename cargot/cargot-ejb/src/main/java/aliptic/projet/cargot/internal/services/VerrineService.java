@@ -47,7 +47,6 @@ public class VerrineService implements VerrineServiceRemote {
 		verrine.setEspece(espece);
 		verrine.setQuantiteMax(quantiteMax);
 		verrineDAO.update(verrine);
-		
 	}
 
 	@Override
