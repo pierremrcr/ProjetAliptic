@@ -67,6 +67,14 @@ public class EscargotEntity implements Serializable{
 		return espece;
 	}
 
+	public VerrineEntity getVerrine() {
+		return verrine;
+	}
+
+	public void setVerrine(VerrineEntity verrine) {
+		this.verrine = verrine;
+	}
+
 	public void setEspece(Espece espece) {
 		this.espece = espece;
 	}

@@ -3,6 +3,8 @@ package aliptic.projet.cargot.internal.services;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.persistence.PrePersist;
+
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
 import aliptic.projet.cargot.internal.daos.EscargotDAO;
@@ -32,7 +34,6 @@ public class EscargotService implements EscargotServiceRemote {
 		return escargots;
 	}
 
-
 	@Override
 	public void deleteEscargotById(int id) {
 		escargotDAO.deleteEscargotById(id);	
@@ -47,5 +48,13 @@ public class EscargotService implements EscargotServiceRemote {
 		escargot.setPoids(poids);
 		escargotDAO.modifierEscargot(escargot);	
 	}
+	
+	@PrePersist
+	public void isUsed(int id) {
+		if(this.getEscargotById(id).getVerrine()!=null) {
+		this.getEscargotById(id).setDisponible(false);
+		}
+	}
+	
 
 }
