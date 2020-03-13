@@ -1,5 +1,6 @@
 package aliptic.projet.cargot.internal.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
@@ -18,11 +19,8 @@ public class VerrineService implements VerrineServiceRemote {
 	VerrineDAO verrineDAO;
 
 	@Override
-	public void createVerrine(int id, Calibre calibre, Espece espece, int quantiteMax) {
-		//create list and add escargots to list
-		//si escargots non dispo, exception (pub)
-		verrineDAO.create(id, calibre, espece, quantiteMax);
-		
+	public void createVerrine(Calibre calibre, Espece espece, int quantiteMax) {
+		verrineDAO.create(calibre, espece, quantiteMax);	
 	}
 	
 	@Override
@@ -34,8 +32,12 @@ public class VerrineService implements VerrineServiceRemote {
 
 	@Override
 	public List<VerrineDTO> getAllVerrines() {
-		// TODO Auto-generated method stub
-		return null;
+		List<VerrineEntity> verrinesEntity = verrineDAO.getAllVerrines();
+		List<VerrineDTO> verrinesDTO = new ArrayList<VerrineDTO>();
+		for (VerrineEntity verrineEntity: verrinesEntity) {
+			verrinesDTO.add(VerrineConverter.entityToDTO(verrineEntity));
+		}
+		return verrinesDTO;
 	}
 
 	@Override
@@ -44,7 +46,6 @@ public class VerrineService implements VerrineServiceRemote {
 		verrine.setCalibre(calibre);
 		verrine.setEspece(espece);
 		verrine.setQuantiteMax(quantiteMax);
-		//verrine.setEscargots(escargots);
 		verrineDAO.update(verrine);
 	}
 
