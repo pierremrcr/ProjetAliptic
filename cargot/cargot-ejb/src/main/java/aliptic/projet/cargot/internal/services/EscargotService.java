@@ -17,8 +17,7 @@ public class EscargotService implements EscargotServiceRemote {
 
 	@Override
 	public void createEscargot(boolean isDisponible, Calibre calibre, Espece espece, double poids) {
-		escargotDAO.createEscargot(isDisponible, calibre, espece, poids);
-		
+		escargotDAO.createEscargot(isDisponible, calibre, espece, poids);	
 	}
 	
 	@Override
