@@ -3,7 +3,6 @@ package aliptic.projet.cargot.internal.services;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
-import javax.persistence.PrePersist;
 
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
@@ -48,8 +47,6 @@ public class EscargotService implements EscargotServiceRemote {
 		escargot.setPoids(poids);
 		escargotDAO.modifierEscargot(escargot);	
 	}
-	
-	
 	
 
 }
