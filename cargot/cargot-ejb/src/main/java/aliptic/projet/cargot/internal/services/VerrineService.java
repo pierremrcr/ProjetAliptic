@@ -20,10 +20,11 @@ public class VerrineService implements VerrineServiceRemote {
 
 	@Override
 	public void createVerrine(int id, Calibre calibre, Espece espece, int quantiteMax) {
+		//create list and add escargots to list
+		//si escargots non dispo, exception (pub)
 		verrineDAO.create(id, calibre, espece, quantiteMax);
 		
 	}
-
 	
 	@Override
 	public VerrineDTO getVerrineById(int id) {
@@ -46,9 +47,7 @@ public class VerrineService implements VerrineServiceRemote {
 		verrine.setQuantiteMax(quantiteMax);
 		//verrine.setEscargots(escargots);
 		verrineDAO.update(verrine);
-		
 	}
-
 
 	@Override
 	public void deleteVerrineById(int id) {

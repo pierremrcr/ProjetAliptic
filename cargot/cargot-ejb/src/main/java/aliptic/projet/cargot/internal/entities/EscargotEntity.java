@@ -17,12 +17,34 @@ public class EscargotEntity implements Serializable{
 	@Id
 	private int id;
 	private boolean isDisponible;
-	public Calibre calibre;
-	public Espece espece;
+	private Calibre calibre;
+	private Espece espece;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EscargotEntity other = (EscargotEntity) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+
 	private double poids;
 	
 	@ManyToOne
-	@JoinColumn(name="verrineid",insertable=false, updatable=false)
+	@JoinColumn(name="verrineid")
 	private VerrineEntity verrine;
 
 	public EscargotEntity() {

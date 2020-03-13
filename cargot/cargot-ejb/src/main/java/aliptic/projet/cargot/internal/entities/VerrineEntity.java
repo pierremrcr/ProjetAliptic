@@ -20,8 +20,6 @@ public class VerrineEntity {
 	@OneToMany(mappedBy="verrine")
 	private List<EscargotEntity> escargots;
 	
-	
-	
 	public VerrineEntity() {
 		super();
 	}
