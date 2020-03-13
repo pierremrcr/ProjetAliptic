@@ -2,6 +2,8 @@ package aliptic.projet.cargot.internal.entities;
 
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -12,6 +14,7 @@ import aliptic.projet.cargot.internal.Espece;
 public class VerrineEntity {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType. IDENTITY)
 	private Integer id;
 	private Calibre calibre;
 	private Espece espece;
@@ -70,7 +73,6 @@ public class VerrineEntity {
 	public void setQuantiteMax(int quantiteMax) {
 		this.quantiteMax = quantiteMax;
 	}
-	
 	
 	public List<EscargotEntity> getEscargots() {
 		return escargots;
