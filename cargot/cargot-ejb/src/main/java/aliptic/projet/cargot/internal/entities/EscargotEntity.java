@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
 
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
@@ -93,6 +94,13 @@ public class EscargotEntity implements Serializable{
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
+	}
+	
+	@PrePersist
+	public void isUsed() {
+		if(this.getVerrine()!=null) {
+		this.setDisponible(false);
+		}
 	}
 
 	@Override
