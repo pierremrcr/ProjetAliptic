@@ -49,12 +49,7 @@ public class EscargotService implements EscargotServiceRemote {
 		escargotDAO.modifierEscargot(escargot);	
 	}
 	
-	@PrePersist
-	public void isUsed(int id) {
-		if(this.getEscargotById(id).getVerrine()!=null) {
-		this.getEscargotById(id).setDisponible(false);
-		}
-	}
+	
 	
 
 }
