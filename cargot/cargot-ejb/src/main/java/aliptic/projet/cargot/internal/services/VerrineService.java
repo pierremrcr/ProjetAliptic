@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.ejb.ObjectNotFoundException;
 import javax.ejb.Stateless;
 
 import aliptic.projet.cargot.internal.Calibre;
@@ -18,26 +19,38 @@ import aliptic.projet.cargot.pub.services.VerrineServiceRemote;
 
 @Stateless
 public class VerrineService implements VerrineServiceRemote {
-	
+
 	@EJB
 	VerrineDAO verrineDAO;
-	
+
 	@EJB
 	EscargotService escargotService;
 
 	@Override
-	public void createVerrine(Calibre calibre, Espece espece, int quantiteMax) {
+	public void createVerrine(Calibre calibre, Espece espece, int quantiteMax) throws ObjectNotFoundException {
 		List<EscargotEntity> escargots = new ArrayList<EscargotEntity>();
 		List<EscargotEntity> toVerrine = new ArrayList<EscargotEntity>();
 		escargots = escargotService.getAllEscargots();
+		int compteur = 0;
+
 		for(EscargotEntity escargot : escargots) {
-			if(escargot.getCalibre()==calibre&&escargot.getEspece()==espece&&escargot.isDisponible()==true) {
-				if(toVerrine.size()<quantiteMax) {toVerrine.add(escargot);}
+			if(escargot.getCalibre() == calibre && escargot.getEspece() == espece && escargot.isDisponible()==true) {
+				compteur++;
+				if(compteur<quantiteMax) {
+					toVerrine.add(escargot);
+				}
+				else if(compteur==quantiteMax) {
+					break;
+				}
+				else {
+					throw new ObjectNotFoundException();	
+				}
 			}
 		}
-		verrineDAO.create(calibre, espece, quantiteMax,toVerrine);	
+		verrineDAO.create(calibre, espece, quantiteMax,toVerrine);
 	}
-	
+
+
 	@Override
 	public VerrineDTO getVerrineById(int id) {
 		VerrineEntity verrine = verrineDAO.getVerrineById(id);
@@ -68,5 +81,5 @@ public class VerrineService implements VerrineServiceRemote {
 	public void deleteVerrineById(int id) {
 		verrineDAO.deleteVerrineById(id);
 	}
-	
+
 }
