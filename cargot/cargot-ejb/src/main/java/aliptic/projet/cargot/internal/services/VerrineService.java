@@ -9,6 +9,7 @@ import aliptic.projet.cargot.pub.dtos.VerrineDTO;
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
 import aliptic.projet.cargot.internal.daos.VerrineDAO;
+import aliptic.projet.cargot.internal.entities.EscargotEntity;
 import aliptic.projet.cargot.internal.entities.VerrineEntity;
 import aliptic.projet.cargot.internal.utils.VerrineConverter;
 import aliptic.projet.cargot.pub.services.VerrineServiceRemote;
@@ -18,10 +19,21 @@ public class VerrineService implements VerrineServiceRemote {
 	
 	@EJB
 	VerrineDAO verrineDAO;
+	
+	@EJB
+	EscargotService escargotService;
 
 	@Override
 	public void createVerrine(Calibre calibre, Espece espece, int quantiteMax) {
-		verrineDAO.create(calibre, espece, quantiteMax);	
+		List<EscargotEntity> escargots = new ArrayList<EscargotEntity>();
+		List<EscargotEntity> toVerrine = new ArrayList<EscargotEntity>();
+		escargots = escargotService.getAllEscargots();
+		for(EscargotEntity escargot : escargots) {
+			if(escargot.getCalibre()==calibre&&escargot.getEspece()==espece&&escargot.isDisponible()==true) {
+				if(toVerrine.size()<quantiteMax) {toVerrine.add(escargot);}
+			}
+		}
+		verrineDAO.create(calibre, espece, quantiteMax,toVerrine);	
 	}
 	
 	@Override
