@@ -1,12 +1,16 @@
 package aliptic.projet.cargot.internal.services;
 
 import java.util.ArrayList;
-
+import java.util.Hashtable;
 import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.ObjectNotFoundException;
 import javax.ejb.Stateless;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
 
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
@@ -15,6 +19,7 @@ import aliptic.projet.cargot.internal.entities.EscargotEntity;
 import aliptic.projet.cargot.internal.entities.VerrineEntity;
 import aliptic.projet.cargot.internal.utils.VerrineConverter;
 import aliptic.projet.cargot.pub.dtos.VerrineDTO;
+import aliptic.projet.cargot.pub.services.EscargotServiceRemote;
 import aliptic.projet.cargot.pub.services.VerrineServiceRemote;
 
 @Stateless
@@ -24,8 +29,9 @@ public class VerrineService implements VerrineServiceRemote {
 	VerrineDAO verrineDAO;
 
 	@EJB
-	EscargotService escargotService;
-
+	EscargotServiceRemote escargotService;
+	
+	
 	@Override
 	public void createVerrine(Calibre calibre, Espece espece, int quantiteMax) throws ObjectNotFoundException {
 		List<EscargotEntity> escargots = new ArrayList<EscargotEntity>();
@@ -38,6 +44,7 @@ public class VerrineService implements VerrineServiceRemote {
 				compteur++;
 				if(compteur<quantiteMax) {
 					toVerrine.add(escargot);
+					escargot.getVerrine();
 				}
 				else if(compteur==quantiteMax) {
 					break;
@@ -49,6 +56,8 @@ public class VerrineService implements VerrineServiceRemote {
 		}
 		verrineDAO.create(calibre, espece, quantiteMax,toVerrine);
 	}
+	
+	
 
 
 	@Override
@@ -81,5 +90,7 @@ public class VerrineService implements VerrineServiceRemote {
 	public void deleteVerrineById(int id) {
 		verrineDAO.deleteVerrineById(id);
 	}
-
+	
+	
+	
 }

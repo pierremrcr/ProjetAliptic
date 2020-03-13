@@ -3,12 +3,15 @@ package aliptic.projet.cargot;
 
 import java.util.Hashtable;
 import java.util.List;
+
+import javax.ejb.ObjectNotFoundException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import aliptic.projet.cargot.pub.services.EscargotServiceRemote;
+import aliptic.projet.cargot.pub.services.VerrineServiceRemote;
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
 import aliptic.projet.cargot.internal.entities.EscargotEntity;
@@ -16,6 +19,7 @@ import aliptic.projet.cargot.internal.entities.EscargotEntity;
 public class EscargotTester {
 	
 	static EscargotServiceRemote service;
+	static VerrineServiceRemote verrineService;
 	
 	@Test
 	public void testEscargotServiceRemote() throws NamingException {
@@ -57,6 +61,21 @@ public class EscargotTester {
 			System.out.println(escargot.getId() + " " + escargot.getCalibre() + " " + escargot.getEspece());
 		}
 	}
+	
+	
+	
+	@Test
+	public void createVerrineTest() {
+		try {
+			verrineService.createVerrine(Calibre.MOYEN, Espece.PETIT_GRIS, 12);
+			System.out.println(verrineService.getVerrineById(1));
+			System.out.println(service.getEscargotById(42).getVerrine());
+		} catch (ObjectNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.err.println("Nombre d'escargots insuffisants");
+		}	
+	}
+	
 
 	@BeforeClass
 	public static void init() throws NamingException {
@@ -79,6 +98,7 @@ public class EscargotTester {
 		props.put("jboss.naming.client.ejb.context", true);
 		InitialContext context = new InitialContext(props);
 		service = (EscargotServiceRemote) context.lookup("ejb:cargot/cargot-ejb/EscargotService!aliptic.projet.cargot.pub.services.EscargotServiceRemote");
+		verrineService = (VerrineServiceRemote) context.lookup("ejb:cargot/cargot-ejb/VerrineService!aliptic.projet.cargot.pub.services.VerrineServiceRemote");
 	}
 	
 }
