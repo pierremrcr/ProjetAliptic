@@ -2,6 +2,7 @@ package aliptic.projet.cargot.internal.entities;
 
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ public class VerrineEntity {
 	private Espece espece;
 	private Integer quantiteMax;
 	
-	@OneToMany(mappedBy="verrine")
+	@OneToMany(mappedBy="verrine",fetch = FetchType.EAGER)
 	private List<EscargotEntity> escargots;
 	
 	public VerrineEntity() {
@@ -40,7 +41,6 @@ public class VerrineEntity {
 		this.espece = espece;
 		this.quantiteMax = quantiteMax;
 	}
-
 
 	public int getId() {
 		return id;

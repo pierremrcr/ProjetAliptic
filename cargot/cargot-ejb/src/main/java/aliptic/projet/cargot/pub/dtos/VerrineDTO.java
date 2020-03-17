@@ -1,8 +1,11 @@
 package aliptic.projet.cargot.pub.dtos;
 
 import java.io.Serializable;
+import java.util.List;
+
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
+import aliptic.projet.cargot.internal.entities.EscargotEntity;
 
 public class VerrineDTO implements Serializable {
 	
@@ -10,6 +13,7 @@ public class VerrineDTO implements Serializable {
 	private Calibre calibre;
 	private Espece espece;
 	private int quantite;
+	private List<EscargotEntity> escargots;
 	
 	public VerrineDTO(int id, Calibre calibre, Espece espece, int quantite) {
 		this.id = id;
@@ -49,5 +53,15 @@ public class VerrineDTO implements Serializable {
 	public void setQuantite(int quantite) {
 		this.quantite = quantite;
 	}
+
+	public List<EscargotEntity> getEscargots() {
+		return escargots;
+	}
+
+	public void setEscargots(List<EscargotEntity> escargots) {
+		this.escargots = escargots;
+	}
+	
+	
 
 }

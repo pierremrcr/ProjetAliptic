@@ -10,6 +10,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import aliptic.projet.cargot.pub.dtos.VerrineDTO;
 import aliptic.projet.cargot.pub.services.EscargotServiceRemote;
 import aliptic.projet.cargot.pub.services.VerrineServiceRemote;
 import aliptic.projet.cargot.internal.Calibre;
@@ -63,20 +65,30 @@ public class EscargotTester {
 	}
 	
 	
-	
 	@Test
 	public void createVerrineTest() {
 		try {
 			verrineService.createVerrine(Calibre.MOYEN, Espece.PETIT_GRIS, 12);
-			System.out.println(verrineService.getVerrineById(1));
-			System.out.println(service.getEscargotById(42).getVerrine());
+			//System.out.println(verrineService.getVerrineById(1));
+			//System.out.println(service.getEscargotById(42).getVerrine());
 		} catch (ObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			System.err.println("Nombre d'escargots insuffisants");
 		}	
 	}
 	
+	@Test
+	public void getVerrineByIdTest() {
+	VerrineDTO verrine = verrineService.getVerrineById(1);
+	System.out.println(verrine.getCalibre());
+	System.out.println(service.getEscargotById(42).getVerrine());
+	
+	}
+	
 
+
+	
+	
 	@BeforeClass
 	public static void init() throws NamingException {
 		Hashtable<Object, Object> props = new Hashtable<>();

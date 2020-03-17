@@ -30,6 +30,8 @@ public class CartonDTO implements Serializable {
 		this.verrines = verrines;
 	}
 	
+	/*
+	
 	public double getPoids() {
 		double total = 0.;
 		for (VerrineDTO verrine: verrines) {
@@ -37,5 +39,7 @@ public class CartonDTO implements Serializable {
 		}
 		return total;
 	}
+	
+	*/
 
 }

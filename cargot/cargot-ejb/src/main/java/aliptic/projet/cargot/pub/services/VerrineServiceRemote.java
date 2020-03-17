@@ -6,6 +6,7 @@ import javax.ejb.ObjectNotFoundException;
 import javax.ejb.Remote;
 import aliptic.projet.cargot.internal.Calibre;
 import aliptic.projet.cargot.internal.Espece;
+import aliptic.projet.cargot.internal.entities.VerrineEntity;
 import aliptic.projet.cargot.pub.dtos.VerrineDTO;
 
 @Remote
