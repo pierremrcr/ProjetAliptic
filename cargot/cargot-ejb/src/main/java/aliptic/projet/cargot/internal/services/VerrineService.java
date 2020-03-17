@@ -39,12 +39,14 @@ public class VerrineService implements VerrineServiceRemote {
 		escargots = escargotService.getAllEscargots();
 		int compteur = 0;
 
+		//Tri des escargots pour remplir la verrine
 		for(EscargotEntity escargot : escargots) {
 			if(escargot.getCalibre() == calibre && escargot.getEspece() == espece && escargot.isDisponible()==true) {
 				compteur++;
-				if(compteur<quantiteMax) {
+				if(compteur<=quantiteMax) {
 					toVerrine.add(escargot);
 					escargot.getVerrine();
+					escargot.getVerrineid();
 				}
 				else if(compteur==quantiteMax) {
 					break;
@@ -54,12 +56,20 @@ public class VerrineService implements VerrineServiceRemote {
 				}
 			}
 		}
-		verrineDAO.create(calibre, espece, quantiteMax,toVerrine);
+	
+		//Création de la verrine avec la liste d'escargots triés
+		VerrineEntity verrine = new VerrineEntity();
+		verrine.setCalibre(calibre);
+		verrine.setEspece(espece);
+		verrine.setQuantiteMax(quantiteMax);
+		verrine.setEscargots(toVerrine);
+		//verrineDAO.create(calibre, espece, quantiteMax,toVerrine);
+		verrineDAO.create(verrine);
+		verrine.getId();
+			
 	}
 	
 	
-
-
 	@Override
 	public VerrineDTO getVerrineById(int id) {
 		VerrineEntity verrine = verrineDAO.getVerrineById(id);
@@ -89,8 +99,5 @@ public class VerrineService implements VerrineServiceRemote {
 	@Override
 	public void deleteVerrineById(int id) {
 		verrineDAO.deleteVerrineById(id);
-	}
-	
-	
-	
+	}	
 }

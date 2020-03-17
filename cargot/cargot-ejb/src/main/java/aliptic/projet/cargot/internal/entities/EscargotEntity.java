@@ -2,6 +2,7 @@ package aliptic.projet.cargot.internal.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,8 +26,11 @@ public class EscargotEntity implements Serializable{
 	private Espece espece;
 	private Double poids;
 	
+	@Column(name="verrineid")
+	private Integer verrineid;
+	
 	@ManyToOne
-	@JoinColumn(name="verrineid")
+	@JoinColumn(name="verrineid",insertable = false, updatable = false)
 	private VerrineEntity verrine;
 
 	public EscargotEntity() {
@@ -86,6 +90,14 @@ public class EscargotEntity implements Serializable{
 
 	public void setPoids(double poids) {
 		this.poids = poids;
+	}
+	
+	public Integer getVerrineid() {
+		return verrineid;
+	}
+
+	public void setVerrineid(Integer verrineid) {
+		this.verrineid = verrineid;
 	}
 
 	@Override

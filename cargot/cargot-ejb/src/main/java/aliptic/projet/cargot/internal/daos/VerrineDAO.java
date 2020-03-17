@@ -47,4 +47,9 @@ public class VerrineDAO {
 		entityManager.remove(verrine);
 	}
 
+	public void create(VerrineEntity verrine) {
+		entityManager.persist(verrine);
+		
+	}
+
 }
